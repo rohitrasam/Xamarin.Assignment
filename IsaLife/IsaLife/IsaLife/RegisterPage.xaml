@@ -5,10 +5,8 @@
              BackgroundColor="#00778b">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
-            <StackLayout Orientation="Horizontal">
-                <Entry Placeholder="First Name"></Entry>
-                <Entry Placeholder="Last Name"></Entry>
-            </StackLayout>
+            <Entry Placeholder="First Name"/>
+            <Entry Placeholder="Last Name"/>
             <Entry Placeholder="Email"/>
             <Entry Placeholder="Password" IsPassword="True"/>
             <Entry Placeholder="Confirm Password" IsPassword="True"/>
@@ -16,12 +14,9 @@
             <DatePicker></DatePicker>
             <Label Text="Address"/>
             <Editor></Editor>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Save Password"/>
-                <Switch IsToggled="False"/>
-            </StackLayout>
             <Button Text="Sign Up"/>
-            <Label Text="Already have account? Sign In" TextColor="LightBlue"/>
+            <Label Text="Already have account?" TextColor="LightBlue"/>
+            <Button Text="Sign In"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
