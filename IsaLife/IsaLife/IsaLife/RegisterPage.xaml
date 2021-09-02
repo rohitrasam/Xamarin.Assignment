@@ -5,18 +5,21 @@
              BackgroundColor="#00778b">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
-            <Entry Placeholder="First Name"/>
-            <Entry Placeholder="Last Name"/>
-            <Entry Placeholder="Email"/>
-            <Entry Placeholder="Password" IsPassword="True"/>
-            <Entry Placeholder="Confirm Password" IsPassword="True"/>
-            <Label Text="Date Of Birth"/>
-            <DatePicker></DatePicker>
-            <Label Text="Address"/>
-            <Editor></Editor>
+            <Entry Placeholder="First Name" PlaceholderColor="White" TextColor="White" />
+            <Entry Placeholder="Last Name" PlaceholderColor="White" TextColor="White"/>
+            <Entry Placeholder="Email" PlaceholderColor="White" TextColor="White"/>
+            <Entry Placeholder="Password" IsPassword="True" PlaceholderColor="White" TextColor="White"/>
+            <Entry Placeholder="Confirm Password" IsPassword="True" PlaceholderColor="White" TextColor="White"/>
+            <Label Text="Date Of Birth" TextColor="White" />
+            <DatePicker TextColor="White"></DatePicker>
+            <Entry Placeholder="Address"  PlaceholderColor="White" TextColor="White"/>
+            
             <Button Text="Sign Up"/>
             <Label Text="Already have account?" TextColor="LightBlue"/>
-            <Button Text="Sign In"></Button>
+            <Button 
+                Text="Sign In"
+                Clicked="Button_Clicked_1"
+                    ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

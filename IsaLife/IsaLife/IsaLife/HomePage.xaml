@@ -10,18 +10,27 @@
 
     <StackLayout>
         <Grid>
-            <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large"/>
-            <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large"/>
+            <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold"/>
+            
 
         </Grid>
-        <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large"/>
+        
         <ListView x:Name="UserName" ItemsSource="{Binding Users}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <FlexLayout JustifyContent="SpaceBetween" AlignItems="Center" Padding="15, 0">
-                            <Label Text="{Binding Name}"/>
+                            <ImageButton 
+                                Source="{Binding ImageSRC}" 
+                                WidthRequest="42"
+                                CornerRadius="40"
+                                HeightRequest="42"    
+                                VerticalOptions="Center"
+                                HorizontalOptions ="Center"
+                                />
+                            <Label Text="{Binding Name}" />
                             <Label Text="{Binding Designation}"/>
+                            
                         </FlexLayout>
                     </ViewCell>
                 </DataTemplate>
