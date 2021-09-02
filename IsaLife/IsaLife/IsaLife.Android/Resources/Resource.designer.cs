@@ -10316,7 +10316,7 @@ namespace IsaLife.Droid
 			}
 		}
 		
-		public partial class Dimension
+		public partial class Mipmap
 		{
 			
 			// aapt resource value: 0x7F060000
@@ -13232,11 +13232,6 @@ namespace IsaLife.Droid
 			public const int Toolbar = 2131427442;
 			
 			static Layout()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Layout()
 			{
 			}
 		}
