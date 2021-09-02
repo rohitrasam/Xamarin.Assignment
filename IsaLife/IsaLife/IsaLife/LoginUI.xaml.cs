@@ -26,7 +26,7 @@ namespace IsaLife
         {
             if(loginEmail.Text=="admin" && loginPassword.Text == "1234")
             {
-                Navigation.PushAsync(new MainPage());
+                Navigation.PushAsync(new HomePage());
             }
             else
             {
