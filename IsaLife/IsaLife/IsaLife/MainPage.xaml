@@ -4,27 +4,4 @@
              xmlns:local="clr-namespace:IsaLife"
              x:Class="IsaLife.MainPage">
 
-    <ContentPage.BindingContext>
-        <local:UserViewModel/>
-    </ContentPage.BindingContext>
-
-    <StackLayout>
-        <Grid>
-            
-        </Grid>
-        <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large"/>
-        <ListView x:Name="UserName" ItemsSource="{Binding Users}">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <FlexLayout JustifyContent="SpaceBetween" AlignItems="Center" Padding="15, 0">
-                        <Label Text="{Binding Name}"/>
-                        <Label Text="{Binding Designation}"/>
-                    </FlexLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-    </StackLayout>
-
 </ContentPage>
