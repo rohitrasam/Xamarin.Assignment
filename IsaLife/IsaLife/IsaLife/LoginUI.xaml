@@ -2,16 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsaLife.LoginUI"
+             xmlns:local="clr-namespace:IsaLife"
+             xmlns:contentView="clr-namespace:IsaLife" 
              BackgroundColor="#00778b"
              >
+    
+
     <ContentPage.Content>
         <StackLayout Padding="40" VerticalOptions="Center">
+            <contentView:LoginView />
             <Label Text="ISAGENIX" VerticalOptions="Center" FontSize="40" TextColor="White" HorizontalOptions="Center" />
-
+            
             <Image Source="https://pbs.twimg.com/profile_images/1284270027495989249/fW581o4j_400x400.jpg" WidthRequest="180" HeightRequest="180"/>
 
-            <Entry x:Name="loginEmail" Placeholder="Email" TextColor="White" PlaceholderColor="White"></Entry>
-            <Entry x:Name="loginPassword" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="White"></Entry>
+            <Entry Text="{Binding Email}" x:Name="loginEmail" Placeholder="Email" TextColor="White" PlaceholderColor="White"></Entry>
+            <Entry Text="{Binding Password}" x:Name="loginPassword" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="White"></Entry>
             <Button
                 Text="Login"
                 VerticalOptions="Center"
@@ -19,7 +24,7 @@
                 BorderWidth="1.5"
                 CornerRadius="50"
                 BorderColor="ForestGreen"
-                Clicked="Button_Clicked"
+                Command="{Binding LoginCommand}"
                 ></Button>
 
             <Label HorizontalOptions="Center">
@@ -30,7 +35,7 @@
                     </FormattedString>
                 </Label.FormattedText>
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="RegisterTapped" />
+                    <TapGestureRecognizer Command="{Binding RegisterCommand}" />
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
