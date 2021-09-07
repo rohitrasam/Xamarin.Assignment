@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace IsaLife
 {
     public class UserViewModel
     {
+        public ICommand AddUserCommand { get; set; } 
         public List<User> Users { get; set; }
 
         public UserViewModel()
@@ -15,6 +19,18 @@ namespace IsaLife
             Users.Add(new User("Tanishq Thakral", "Associate Consultant", "https://instagram.flko7-1.fna.fbcdn.net/v/t51.2885-19/s320x320/99126784_596976664266789_1773859516593471488_n.jpg?_nc_ht=instagram.flko7-1.fna.fbcdn.net&_nc_ohc=rRjMA8rGjG8AX9tgm9v&edm=ABfd0MgBAAAA&ccb=7-4&oh=0986491764d799c639f7fcf541f4344c&oe=6137E071&_nc_sid=7bff83"));
             Users.Add(new User("Saimanideep Chava", "Associate Consultant" , "https://s3.amazonaws.com/files.freshteam.com/production/8673/attachments/2002934360/medium/Saimanideep.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARX2EI6XTZXFQECFL%2F20210902%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210902T155634Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIGFgQeh6R3judb1oAu5k3uOOFHCJJXyNW8NpXPzvNQY1AiBDgCToidxUBPgysit98%2BrFKkWtvhKa8MN06VLUylDYayr6AwgUEAMaDDExOTg2NTQwNjk1MSIMeJaqvpxB3uYu3FjQKtcD%2BRj15WBYsOwHlnRB3cbS8X%2BPrr%2F9aotS9sngpzyEwfYsYsR9FHbxv4EG%2F1KweYCn7ITt3LbpLQZ%2F6Y6z0OCiRfE6tRXVm9p6PV%2BVvB0IecA07offQqtVouWH0m8HUeGN4JZWgfhkxPJxtvNAZA8qxK4OfM8pJp1EwOZn%2FLjQxiYPYwfNXnfrrIf5HboUQl%2F%2FlKMH0HAZo%2Fjm6p1N997ZjAnwA3BPQkBYpeM7JYMzcXgEhOq%2BICmXJssPcIVpsJwWOdVY4ETzlDaOF1VL93mtobI0NFh2o0Q4aFpTdxYacBEei9zN9w720xb74m9y1j4DhZzpOSADoV8hJ9uWqhEzH4FNEQRwkqSWnKBFn7wU0BAkASL%2B1dyXE9ZI8f%2F54nL83IibV5NRUGd3fJCCa6Lr%2BFeCJ1tDVUOY7jo3f0BLH0uvbCvG5THEMFwYqu632%2BUSkGljO0vPCa3CsbMuS5uEz4eJ8XxH9flie96vJTQJkxY3mpd%2BjlYr4yA3MRBvA6Iacf7gNTfUofonUDhZEaMTs5F%2F81qbPqWCg6Wp5Ri9%2F4FrjC91kjYVLuuaz%2BYJcc5B32%2B0H69VdliRT%2F0OYdNZ48x4HybsnuOude%2BwDGKo3i%2Bw%2FPUNtzz3MMHXwokGOqYB8vvNNqcSAO104ZhxwngEZgMFa6umdOkVHh%2F4zMpuUZtHxOuhsDrP6WVqy6%2FEbYcumEbhD66%2BB5WIUUKyoTgyu8OXgITe6VHYVsLkiq3jSlfnkQdXubkPDgE%2FvEcIhmA%2FwzAJVpWGJyreoz1AQZGrPO8y3E0r5yka4eCpfZKlwR60EE1ohmFv5nMWrLThkILybv3%2BAgUqrJGxbJEW0tOGc65tiAWFmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=11b20ac2704e11e97cc0323fd6d273462c39a2532423249e9dd4de1e8c601c1b"));
 
+            AddUserCommand = new Command(AddUser);
+
+        }
+
+        private void AddUser()
+        {
+            Users.Add(new User("Saimani", "Associate Consultant", "https://s3.amazonaws.com/files.freshteam.com/production/8673/attachments/2002934360/medium/Saimanideep.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIARX2EI6XTZXFQECFL%2F20210902%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210902T155634Z&X-Amz-Expires=604800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIGFgQeh6R3judb1oAu5k3uOOFHCJJXyNW8NpXPzvNQY1AiBDgCToidxUBPgysit98%2BrFKkWtvhKa8MN06VLUylDYayr6AwgUEAMaDDExOTg2NTQwNjk1MSIMeJaqvpxB3uYu3FjQKtcD%2BRj15WBYsOwHlnRB3cbS8X%2BPrr%2F9aotS9sngpzyEwfYsYsR9FHbxv4EG%2F1KweYCn7ITt3LbpLQZ%2F6Y6z0OCiRfE6tRXVm9p6PV%2BVvB0IecA07offQqtVouWH0m8HUeGN4JZWgfhkxPJxtvNAZA8qxK4OfM8pJp1EwOZn%2FLjQxiYPYwfNXnfrrIf5HboUQl%2F%2FlKMH0HAZo%2Fjm6p1N997ZjAnwA3BPQkBYpeM7JYMzcXgEhOq%2BICmXJssPcIVpsJwWOdVY4ETzlDaOF1VL93mtobI0NFh2o0Q4aFpTdxYacBEei9zN9w720xb74m9y1j4DhZzpOSADoV8hJ9uWqhEzH4FNEQRwkqSWnKBFn7wU0BAkASL%2B1dyXE9ZI8f%2F54nL83IibV5NRUGd3fJCCa6Lr%2BFeCJ1tDVUOY7jo3f0BLH0uvbCvG5THEMFwYqu632%2BUSkGljO0vPCa3CsbMuS5uEz4eJ8XxH9flie96vJTQJkxY3mpd%2BjlYr4yA3MRBvA6Iacf7gNTfUofonUDhZEaMTs5F%2F81qbPqWCg6Wp5Ri9%2F4FrjC91kjYVLuuaz%2BYJcc5B32%2B0H69VdliRT%2F0OYdNZ48x4HybsnuOude%2BwDGKo3i%2Bw%2FPUNtzz3MMHXwokGOqYB8vvNNqcSAO104ZhxwngEZgMFa6umdOkVHh%2F4zMpuUZtHxOuhsDrP6WVqy6%2FEbYcumEbhD66%2BB5WIUUKyoTgyu8OXgITe6VHYVsLkiq3jSlfnkQdXubkPDgE%2FvEcIhmA%2FwzAJVpWGJyreoz1AQZGrPO8y3E0r5yka4eCpfZKlwR60EE1ohmFv5nMWrLThkILybv3%2BAgUqrJGxbJEW0tOGc65tiAWFmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=11b20ac2704e11e97cc0323fd6d273462c39a2532423249e9dd4de1e8c601c1b"));
         }
     }
 }
+
+//Inotifypropertychange
+//removeuser
+//stykes.xaml
+//Events to commands

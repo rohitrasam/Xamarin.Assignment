@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace IsaLife
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class LoginView : ContentView
     {
-        public HomePage()
+        public LoginView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }

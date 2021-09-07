@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,20 +11,17 @@ namespace IsaLife
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginUI : ContentPage
-    {
+    {        
+        private readonly
+        
         public LoginUI()
         {
             InitializeComponent();
+            this.BindingContext = new LoginViewModel();
         }
-
-        private void RegisterTapped(object sender, EventArgs e)
+        private void Button_Clicked()
         {
-            Navigation.PushAsync(new RegisterPage());
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            if(loginEmail.Text=="admin" && loginPassword.Text == "1234")
+            if (loginEmail.Text == "admin" && loginPassword.Text == "1234")
             {
                 Navigation.PushAsync(new HomePage());
             }

@@ -5,15 +5,14 @@
              x:Class="IsaLife.HomePage">
     
     <ContentPage.BindingContext>
-            <local:UserViewModel/>
+            <local:UserViewModel />
         </ContentPage.BindingContext>
 
     <StackLayout>
-        <Grid>
-            <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold"/>
-            
+        
+            <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold"/>           
 
-        </Grid>
+       
         
         <ListView x:Name="UserName" ItemsSource="{Binding Users}">
             <ListView.ItemTemplate>
@@ -36,5 +35,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Text="Add User" Command="{Binding AddUserCommand}" ></Button>
     </StackLayout>
 </ContentPage>
