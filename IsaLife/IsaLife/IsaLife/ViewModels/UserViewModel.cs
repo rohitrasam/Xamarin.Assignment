@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace IsaLife
 {
-    public class UserPageModel : BaseViewModel
+    public class UserViewModel : BaseViewModel
     {
         public ICommand AddUserCommand { get; set; }
         private ObservableCollection<User> users;
@@ -25,7 +25,7 @@ namespace IsaLife
             } 
         }
 
-        public UserPageModel()
+        public UserViewModel()
         {
             
             //Users = new ObservableCollection<User>();
