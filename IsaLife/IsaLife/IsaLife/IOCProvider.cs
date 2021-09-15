@@ -20,7 +20,7 @@ namespace IsaLife
         {
             container.Options.EnableAutoVerification = false;
             container.Register<LoginViewModel>();
-            container.Register<UserViewModel>();
+            container.Register<UserPageModel>();
         }
     }
 }
