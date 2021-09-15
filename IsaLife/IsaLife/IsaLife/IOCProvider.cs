@@ -1,6 +1,9 @@
-﻿using SimpleInjector;
+﻿using IsaLife.Service;
+using IsaLife.ViewModels;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -21,6 +24,7 @@ namespace IsaLife
             container.Options.EnableAutoVerification = false;
             container.Register<LoginViewModel>();
             container.Register<UserViewModel>();
+            container.Register<EmployeeService>();
         }
     }
 }

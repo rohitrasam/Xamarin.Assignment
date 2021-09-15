@@ -6,22 +6,23 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
+using IsaLife.ViewModels;
 
-namespace IsaLife
+namespace IsaLife.ViewModels
 {
     public class UserViewModel : BaseViewModel
     {
         public ICommand AddUserCommand { get; set; }
-        private ObservableCollection<User> users;
-        public ObservableCollection<User> Users 
+        private ObservableCollection<Employee> employees;
+        public ObservableCollection<Employee> Employees 
         { 
             get 
             {
-                return users;
+                return employees;
             } 
             set {
-                users = value; 
-                OnPropertyChanged(nameof(Users));
+                employees = value; 
+                OnPropertyChanged(nameof(Employees));
             } 
         }
 

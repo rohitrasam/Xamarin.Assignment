@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IsaLife.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -6,11 +7,10 @@ using System.Windows.Input;
 using Xamarin.Forms;
 
 
-namespace IsaLife
+namespace IsaLife.ViewModels
 {
     public class LoginViewModel: BaseViewModel
     {
-        private readonly INavigation _navigation;
         public string Email { get; set; }
         public string Password { get; set; }
         public ICommand LoginCommand { get; set; }
@@ -34,7 +34,7 @@ namespace IsaLife
             }
             else
             {
-                //DisplayAlert("Invalid Credentials", "Email or Password is incorrect!", "Ok");
+                Application.Current.MainPage.DisplayAlert("Invalid Credentials", "Email or Password is incorrect!", "Ok");
             }
         }
 

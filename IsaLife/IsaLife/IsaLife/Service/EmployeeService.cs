@@ -6,28 +6,24 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IsaLife.EmployeeService
+namespace IsaLife.Service
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly HttpClient _httpClient;
+        public HttpClient _httpClient = new HttpClient();
         public List<Employee> Employees { get; set; }
-        public EmployeeService(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
 
         public async Task<List<Employee>> GetEmployees()
         {
-            var resultJson = await _httpClient.GetStringAsync("https://jsonplaceholder.typicode.com/users");
-            var resultEmployee = JsonConvert.DeserializeObject<List<Employee>>(resultJson);
+            var resultJson = await _httpClient.GetStringAsync("https://reqres.in/api/users?page=2");
+            List<Employee> resultEmployee = JsonConvert.DeserializeObject<List<Employee>>(resultJson);
             Employees = resultEmployee;
             return Employees;
         }
 
-        public async Task<List<Employee>> GetEmployeesId()
+        public Task<List<Employee>> GetEmployeesId()
         {
-
+            throw new NotImplementedException();
         }
     }
 }
