@@ -30,7 +30,7 @@ namespace IsaLife
         {
             if (Email == "admin" && Password == "1234")
             {
-                Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+                Application.Current.MainPage.Navigation.PushAsync(new UserPage());
             }
             else
             {
