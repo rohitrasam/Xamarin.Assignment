@@ -19,25 +19,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="UserPage.xaml.cs">
+    <Compile Update="Views\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="UserPage.xaml">
+    <EmbeddedResource Update="Views\UserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="LoginUI.xaml">
+    <EmbeddedResource Update="Views\LoginUI.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LoginView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RegisterPage.xaml">
+    <EmbeddedResource Update="Views\RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
