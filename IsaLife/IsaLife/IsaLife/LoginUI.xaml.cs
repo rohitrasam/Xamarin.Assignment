@@ -11,24 +11,11 @@ namespace IsaLife
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginUI : ContentPage
-    {        
-        private readonly
-        
+    {                
         public LoginUI()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
-        }
-        private void Button_Clicked()
-        {
-            if (loginEmail.Text == "admin" && loginPassword.Text == "1234")
-            {
-                Navigation.PushAsync(new HomePage());
-            }
-            else
-            {
-                DisplayAlert("Invalid Credentials", "Email or Password is incorrect!", "Ok");
-            }
+            this.BindingContext = IOCProvider.GetInstance<LoginViewModel>();
         }
     }
 }

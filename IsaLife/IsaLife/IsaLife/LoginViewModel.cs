@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+
 namespace IsaLife
 {
     public class LoginViewModel: BaseViewModel
@@ -14,31 +15,28 @@ namespace IsaLife
         public string Password { get; set; }
         public ICommand LoginCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
-        public LoginViewModel(INavigation navigation)
+        public LoginViewModel()
         {
             LoginCommand = new Command(OnLogin);
             RegisterCommand = new Command(OnRegister);
-
-            _navigation = navigation;
-        }        
+        }
 
         private void OnRegister()
-    {
-        _navigation.PushAsync(new RegisterPage());
-    }
-
-    private void OnLogin()
-    {
-        if (Email == "admin" && Password == "1234")
         {
-                Console.WriteLine(Email);
-            //Navigation.PushAsync(new HomePage());
+            Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
-        else
-        {
-            //DisplayAlert("Invalid Credentials", "Email or Password is incorrect!", "Ok");
-        }
-    }
 
-}
+        private void OnLogin()
+        {
+            if (Email == "admin" && Password == "1234")
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+            }
+            else
+            {
+                //DisplayAlert("Invalid Credentials", "Email or Password is incorrect!", "Ok");
+            }
+        }
+
+    }
 }

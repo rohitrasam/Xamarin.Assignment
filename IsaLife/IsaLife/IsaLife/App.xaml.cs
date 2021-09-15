@@ -1,16 +1,21 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FreshMvvm;
+using FreshTinyIoC;
+using Xamarin.Forms.Internals;
+using SimpleInjector;
 
 namespace IsaLife
 {
     public partial class App : Application
     {
+        
         public App()
         {
             InitializeComponent();
+            IOCProvider.Register();
 
-            //MainPage = new MainPage();
             MainPage = new NavigationPage(new LoginUI());
         }
 

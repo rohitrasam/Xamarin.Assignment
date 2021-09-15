@@ -3,17 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsaLife.RegisterPage"
              BackgroundColor="#00778b">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="white"/>
+                <Setter Property="PlaceholderColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
-            <Entry Placeholder="First Name" PlaceholderColor="White" TextColor="White" />
-            <Entry Placeholder="Last Name" PlaceholderColor="White" TextColor="White"/>
-            <Entry Placeholder="Email" PlaceholderColor="White" TextColor="White"/>
-            <Entry Placeholder="Password" IsPassword="True" PlaceholderColor="White" TextColor="White"/>
-            <Entry Placeholder="Confirm Password" IsPassword="True" PlaceholderColor="White" TextColor="White"/>
+            <Entry Placeholder="First Name" />
+            <Entry Placeholder="Last Name" />
+            <Entry Placeholder="Email" />
+            <Entry Placeholder="Password" IsPassword="True" />
+            <Entry Placeholder="Confirm Password" IsPassword="True" />
             <Label Text="Date Of Birth" TextColor="White" />
             <DatePicker TextColor="White"></DatePicker>
-            <Entry Placeholder="Address"  PlaceholderColor="White" TextColor="White"/>
-            
+            <Entry Placeholder="Address"/>
+
             <Button Text="Sign Up"/>
             <Label Text="Already have account?" TextColor="LightBlue"/>
             <Button 

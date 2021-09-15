@@ -3,14 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsaLife.LoginUI"
              xmlns:local="clr-namespace:IsaLife"
-             xmlns:contentView="clr-namespace:IsaLife" 
              BackgroundColor="#00778b"
              >
-    
-
     <ContentPage.Content>
         <StackLayout Padding="40" VerticalOptions="Center">
-            <contentView:LoginView />
             <Label Text="ISAGENIX" VerticalOptions="Center" FontSize="40" TextColor="White" HorizontalOptions="Center" />
             
             <Image Source="https://pbs.twimg.com/profile_images/1284270027495989249/fW581o4j_400x400.jpg" WidthRequest="180" HeightRequest="180"/>
@@ -26,7 +22,6 @@
                 BorderColor="ForestGreen"
                 Command="{Binding LoginCommand}"
                 ></Button>
-
             <Label HorizontalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>
