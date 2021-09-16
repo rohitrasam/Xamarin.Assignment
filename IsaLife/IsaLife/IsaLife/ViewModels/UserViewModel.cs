@@ -2,7 +2,9 @@
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
-using SimpleInjector;
+using System.Net.Http;
+using Newtonsoft.Json;
+using IsaLife.Service;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
@@ -10,14 +12,13 @@ namespace IsaLife.ViewModels
 {
     public class UserViewModel : BaseViewModel
     {
-        //public ICommand ShowEmployeeCommand { get; set; }
-
-        private IEmployeeService _employeeService;
-
-        private List<Employee> employees;
-        public List<Employee> Employees
-        {
-            get
+        
+        private readonly IEmployeeService _employeeService;
+        public ICommand AddUserCommand { get; set; }
+        private List<Employee> users;
+        public List<Employee> Users 
+        { 
+            get 
             {
                 return employees;
             }
@@ -32,23 +33,17 @@ namespace IsaLife.ViewModels
             _employeeService = employeeService;
             Task.Run(async () =>
             {
-                await GetEmployee();
+                await GetEmployees();
             });
-            //ShowEmployeeCommand = new Command(ShowEmployee);
+
         }
 
-        //public void SeviceInjection(IEmployeeService employeeService)
-        //{
-        //    _employeeService = employeeService;
-        //}
-
-        public async Task GetEmployee()
+        public async Task GetEmployees()
         {
-
             var result = await _employeeService.GetEmployees();
-            Employees = result.EmployeeList;
-            OnPropertyChanged(nameof(Employees));
+            Users = result.EmployeeList;
+            OnPropertyChanged(nameof(Users));
         }
-
+        
     }
 }

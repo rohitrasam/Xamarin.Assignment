@@ -5,22 +5,24 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace IsaLife.Service
 {
     public class EmployeeService : IEmployeeService
     {
-        public HttpClient _httpClient = new HttpClient();
-
+        HttpClient  httpClient= new HttpClient();
         public async Task<Root> GetEmployees()
         {
-            var resultJson = await _httpClient.GetStringAsync("https://reqres.in/api/users?page=2");
-            return JsonConvert.DeserializeObject<Root>(resultJson);
-        }
+            HttpResponseMessage response = await httpClient.GetAsync("https://reqres.in/api/users");
 
-        public Task<Employee> GetEmployeesId(int id)
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
         {
-            throw new NotImplementedException();
+                var result = await response.Content.ReadAsStringAsync();
+                var json = JsonConvert.DeserializeObject<Root>(result);
+                return json;
+        }
+            return null;
         }
     }
 }
