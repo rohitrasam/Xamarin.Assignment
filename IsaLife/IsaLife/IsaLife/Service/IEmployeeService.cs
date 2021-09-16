@@ -4,11 +4,11 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IsaLife
+namespace IsaLife.Service
 {
     public interface IEmployeeService
     {
-        Task<List<Employee>> GetEmployees();
-        Task<Employee> GetEmployeesId(int id);
+        //Task<ObservableCollection<Root>> GetEmployees();
+        Task<Root> GetEmployees();
     }
 }

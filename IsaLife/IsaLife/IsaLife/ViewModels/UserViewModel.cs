@@ -6,19 +6,18 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
-using IsaLife.ViewModels;
+using IsaLife.Service;
 using System.Threading.Tasks;
 
 namespace IsaLife.ViewModels
 {
     public class UserViewModel : BaseViewModel
     {
-        public ICommand ShowEmployeeCommand { get; set; }
-
+        
         private readonly IEmployeeService _employeeService;
-
-        private Task<List<Employee>> employees;
-        public Task<List<Employee>> Employees 
+        public ICommand AddUserCommand { get; set; }
+        private List<Employee> users;
+        public List<Employee> Users 
         { 
             get 
             {
@@ -33,13 +32,19 @@ namespace IsaLife.ViewModels
         public UserViewModel(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
-            ShowEmployeeCommand = new Command(ShowEmployee);
+            Task.Run(async () =>
+            {
+                await GetEmployees();
+            });
+
         }
 
-        public void ShowEmployee()
+        public async Task GetEmployees()
         {
-            Employees =_employeeService.GetEmployees();
-            OnPropertyChanged(nameof(Employees));
+            var result = await _employeeService.GetEmployees();
+            Users = result.EmployeeList;
+            OnPropertyChanged(nameof(Users));
         }
+        
     }
 }
