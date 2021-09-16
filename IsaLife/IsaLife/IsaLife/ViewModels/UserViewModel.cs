@@ -1,44 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
-using System.Net.Http;
-using Newtonsoft.Json;
-using IsaLife.ViewModels;
+using SimpleInjector;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace IsaLife.ViewModels
 {
     public class UserViewModel : BaseViewModel
     {
-        public ICommand ShowEmployeeCommand { get; set; }
+        //public ICommand ShowEmployeeCommand { get; set; }
 
-        private readonly IEmployeeService _employeeService;
+        private IEmployeeService _employeeService;
 
-        private Task<List<Employee>> employees;
-        public Task<List<Employee>> Employees 
-        { 
-            get 
+        private List<Employee> employees;
+        public List<Employee> Employees
+        {
+            get
             {
                 return employees;
-            } 
-            set {
-                employees = value; 
+            }
+            set
+            {
+                employees = value;
                 OnPropertyChanged(nameof(Employees));
-            } 
+            }
         }
-
         public UserViewModel(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
+            Task.Run(async () =>
+            {
+                await GetEmployee();
+            });
+            //ShowEmployeeCommand = new Command(ShowEmployee);
         }
 
-        public void ShowEmployee()
-        {
-            Employees =_employeeService.GetEmployees();
+        //public void SeviceInjection(IEmployeeService employeeService)
+        //{
+        //    _employeeService = employeeService;
+        //}
 
+        public async Task GetEmployee()
+        {
+
+            var result = await _employeeService.GetEmployees();
+            Employees = result.EmployeeList;
+            OnPropertyChanged(nameof(Employees));
         }
 
     }

@@ -12,10 +12,10 @@ namespace IsaLife.Service
     {
         public HttpClient _httpClient = new HttpClient();
 
-        public async Task<List<Employee>> GetEmployees()
+        public async Task<Root> GetEmployees()
         {
             var resultJson = await _httpClient.GetStringAsync("https://reqres.in/api/users?page=2");
-            return JsonConvert.DeserializeObject<List<Employee>>(resultJson);
+            return JsonConvert.DeserializeObject<Root>(resultJson);
         }
 
         public Task<Employee> GetEmployeesId(int id)

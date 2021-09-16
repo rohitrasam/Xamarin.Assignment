@@ -1,4 +1,5 @@
 ﻿using IsaLife.Service;
+using IsaLife.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace IsaLife
         public UserPage()
         {
             InitializeComponent();
-            BindingContext = IOCProvider.GetInstance<IEmployeeService>();
+            BindingContext = IOCProvider.GetInstance<UserViewModel>();
         }
     }
 }

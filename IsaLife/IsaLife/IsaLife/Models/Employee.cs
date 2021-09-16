@@ -7,27 +7,28 @@ namespace IsaLife
 {
     public class Employee
     {
-        public int id { get; set; }
-        public string email { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
-        public string avatar { get; set; }
-    }
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
-    public class Support
-    {
-        public string url { get; set; }
-        public string text { get; set; }
-    }
+        [JsonProperty("email")]
+        public string Email { get; set; }
 
+        [JsonProperty("first_name")]
+        public string FirstName { get; set; }
+
+        [JsonProperty("last_name")]
+        public string LastName { get; set; }
+        
+        [JsonProperty("avatar")]
+        public string Avatar { get; set; }
+
+        [JsonIgnore]
+        public string Gender { get; set; } = "M";
+    }
     public class Root
     {
-        public int page { get; set; }
-        public int per_page { get; set; }
-        public int total { get; set; }
-        public int total_pages { get; set; }
-        public List<Employee> data { get; set; }
-        public Support support { get; set; }
+        [JsonProperty("data")]
+        public List<Employee> EmployeeList { get; set; }
     }
 
 

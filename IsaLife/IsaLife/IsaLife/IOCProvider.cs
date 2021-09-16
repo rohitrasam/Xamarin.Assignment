@@ -24,7 +24,7 @@ namespace IsaLife
             container.Options.EnableAutoVerification = false;
             container.Register<LoginViewModel>();
             container.Register<UserViewModel>();
-            container.Register<IEmployeeService,EmployeeService>();
+            container.Register<IEmployeeService, EmployeeService>();
         }
     }
 }
