@@ -33,13 +33,13 @@ namespace IsaLife.ViewModels
         public UserViewModel(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
+            ShowEmployeeCommand = new Command(ShowEmployee);
         }
 
         public void ShowEmployee()
         {
             Employees =_employeeService.GetEmployees();
-
+            OnPropertyChanged(nameof(Employees));
         }
-
     }
 }

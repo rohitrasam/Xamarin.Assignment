@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:IsaLife"
-             xmlns:viewmodel="clr-namespace:IsaLife.ViewModels"
+             xmlns:viewmodel="clr-namespace:IsaLife.ViewModels" 
              x:Class="IsaLife.UserPage">
 
     <StackLayout>
         <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold"/>
+        <Button Text="show employees" Command="{Binding ShowEmployeeCommand}"/>
         <ListView ItemsSource="{Binding Employees}">
             <ListView.ItemTemplate>
                 <DataTemplate>
