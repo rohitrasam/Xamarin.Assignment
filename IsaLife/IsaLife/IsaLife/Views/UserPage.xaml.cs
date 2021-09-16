@@ -18,15 +18,7 @@ namespace IsaLife
         public UserPage()
         {
             InitializeComponent();
-            BindingContext = IOCProvider.GetInstance<EmployeeService>();
+            BindingContext = IOCProvider.GetInstance<IEmployeeService>();
         }
-
-        //private async void Button_Clicked(object sender, EventArgs e)
-        //{
-        //    var httpClient = new HttpClient();
-        //    var resultJson = await httpClient.GetStringAsync("https://jsonplaceholder.typicode.com/users");
-        //    var resultEmployee = JsonConvert.DeserializeObject<Employee[]>(resultJson);
-        //    employees.ItemsSource = resultEmployee;
-        //}
     }
 }
