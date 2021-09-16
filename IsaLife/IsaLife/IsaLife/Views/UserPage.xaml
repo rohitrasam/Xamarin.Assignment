@@ -2,36 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:IsaLife"
+             xmlns:viewmodel="clr-namespace:IsaLife.ViewModels"
              x:Class="IsaLife.UserPage">
-    
-    <!--<ContentPage.BindingContext>
-        <local:UserPageModel />
-    </ContentPage.BindingContext>-->
-    
+
     <StackLayout>
         <Label Text="List of users" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold"/>
-        <Button Text="Click me" Clicked="Button_Clicked"/>
-        <!--<CollectionView x:Name="employees">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding Name}"/>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-            
-        </CollectionView>-->
-        <ListView x:Name="employees">
+        <ListView ItemsSource="{Binding Employees}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <FlexLayout JustifyContent="SpaceBetween" Padding="10, 0" AlignItems="Center">
-                            <Label Text="{Binding Id}"/>
-                            <Label Text="{Binding Name}"/>
-                            <Label Text="{Binding Username}"/>
+                            <Label Text="{Binding id}"/>
+                            <Label Text="{Binding name}"/>
+                            <Label Text="{Binding first_name}"/>
                         </FlexLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Add User" Command="{Binding AddUserCommand}" ></Button>
     </StackLayout>
 </ContentPage>

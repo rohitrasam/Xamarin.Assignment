@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IsaLife.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace IsaLife
         public LoginUI()
         {
             InitializeComponent();
-            this.BindingContext = IOCProvider.GetInstance<LoginViewModel>();
+            BindingContext = IOCProvider.GetInstance<LoginViewModel>();
         }
     }
 }

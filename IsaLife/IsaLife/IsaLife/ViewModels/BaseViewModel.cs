@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace IsaLife
+namespace IsaLife.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {

@@ -8,6 +8,6 @@ namespace IsaLife
     public interface IEmployeeService
     {
         Task<List<Employee>> GetEmployees();
-        Task<List<Employee>> GetEmployeesId();
+        Task<Employee> GetEmployeesId(int id);
     }
 }
