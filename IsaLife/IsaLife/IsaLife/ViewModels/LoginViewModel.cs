@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IsaLife.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -30,7 +31,7 @@ namespace IsaLife
         {
             if (Email == "admin" && Password == "1234")
             {
-                Application.Current.MainPage.Navigation.PushAsync(new UserPage());
+                Application.Current.MainPage.Navigation.PushAsync(new UserView());
             }
             else
             {

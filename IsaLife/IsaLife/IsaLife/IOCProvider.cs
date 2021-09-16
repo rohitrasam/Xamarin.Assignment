@@ -1,4 +1,5 @@
-﻿using SimpleInjector;
+﻿using IsaLife.Service;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,6 +22,7 @@ namespace IsaLife
             container.Options.EnableAutoVerification = false;
             container.Register<LoginViewModel>();
             container.Register<UserViewModel>();
+            container.Register<IEmployeeService, EmployeeService>();
         }
     }
 }
