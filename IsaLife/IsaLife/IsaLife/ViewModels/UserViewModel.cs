@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using IsaLife.Service;
 using System.Threading.Tasks;
 
-namespace IsaLife
+namespace IsaLife.ViewModels
 {
     public class UserViewModel : BaseViewModel
     {
@@ -21,11 +21,11 @@ namespace IsaLife
         { 
             get 
             {
-                return users;
+                return employees;
             } 
             set {
-                users = value; 
-                OnPropertyChanged(nameof(Users));
+                employees = value; 
+                OnPropertyChanged(nameof(Employees));
             } 
         }
 

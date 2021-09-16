@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http;
@@ -16,11 +17,11 @@ namespace IsaLife.Service
             HttpResponseMessage response = await httpClient.GetAsync("https://reqres.in/api/users");
 
             if(response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
+        {
                 var result = await response.Content.ReadAsStringAsync();
                 var json = JsonConvert.DeserializeObject<Root>(result);
                 return json;
-            }
+        }
             return null;
         }
     }

@@ -2,6 +2,7 @@
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
