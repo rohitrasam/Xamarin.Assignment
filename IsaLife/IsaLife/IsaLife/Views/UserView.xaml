@@ -10,10 +10,9 @@
         <ResourceDictionary>
             <converters:ColorConverter x:Key="colorConverter"/>
         </ResourceDictionary>
-        
-        <!--<Style TargetType="FlexLayout">
-            <Setter Property="BackgroundColor" Value="{Binding Converter={StaticResource colorConverter}}"/>
-        </Style>-->
+        <Style TargetType="FlexLayout">
+            <Setter Property="BackgroundColor" Value="{Binding Gender,Converter={StaticResource colorConverter}}"/>
+        </Style>
     </ContentPage.Resources>
     <StackLayout>
         <Label Text="Employees List" FontSize="Large"
@@ -23,7 +22,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <FlexLayout JustifyContent="SpaceBetween" Padding="10, 0" AlignItems="Center" BackgroundColor="{Binding Gender, Converter= {StaticResource colorConverter}}" >
+                        <FlexLayout JustifyContent="SpaceBetween" Padding="10, 0" AlignItems="Center">
                             <Label Text="{Binding Id}"/>
                             <Label Text="{Binding FirstName}"/>
                             <Label Text="{Binding Gender}" />

@@ -22,7 +22,7 @@ namespace IsaLife
 
         [JsonProperty("avatar")]
         public string Avatar { get; set; }
-        
+
         [JsonIgnore]
         public string Gender { get; set; } = "M";
     }
