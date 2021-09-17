@@ -8,11 +8,22 @@ namespace IsaLife
 {
     public class Employee
     {
-        public int id { get; set; }
-        public string email { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
-        public string avatar { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("email")]
+        public string Email { get; set; }
+
+        [JsonProperty("first_name")]
+        public string FirstName { get; set; }
+
+        [JsonProperty("last_name")]
+        public string LastName { get; set; }
+
+        [JsonProperty("avatar")]
+        public string Avatar { get; set; }
+        
+        [JsonIgnore]
         public string Gender { get; set; } = "M";
     }
 

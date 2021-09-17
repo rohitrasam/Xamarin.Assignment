@@ -14,11 +14,11 @@
                 <ListView.ItemTemplate>                    
                     <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding id}"/>
-                            <Label Text="{Binding first_name}"/>
-                            <Label Text="{Binding last_name}"/>
-                        </StackLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" Padding="10, 0" AlignItems="Center">
+                            <Label Text="{Binding Id}"/>
+                            <Label Text="{Binding FirstName}"/>
+                            <Label Text="{Binding Gender}"/>
+                        </FlexLayout>
                     </ViewCell>
                 </DataTemplate>
                 </ListView.ItemTemplate>
