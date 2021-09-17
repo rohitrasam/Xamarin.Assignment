@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsaLife.LoginUI"
-             xmlns:custom="clr-namespace:IsaLife;assembly=IsaLife"
+             xmlns:custom="clr-namespace:IsaLife.custom;assembly=IsaLife"
              BackgroundColor="#00778b"
              >
     <ContentPage.Content>
