@@ -8,7 +8,6 @@ using Android.Text;
 using Android.Views;
 using Android.Widget;
 using IsaLife;
-using IsaLife.custom;
 using IsaLife.Droid;
 using System;
 using System.Collections.Generic;
