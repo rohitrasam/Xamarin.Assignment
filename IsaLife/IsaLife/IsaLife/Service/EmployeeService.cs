@@ -10,17 +10,17 @@ namespace IsaLife.Service
 {
     public class EmployeeService : IEmployeeService
     {
-        HttpClient  httpClient= new HttpClient();
+        HttpClient httpClient = new HttpClient();
         public async Task<Root> GetEmployees()
         {
             HttpResponseMessage response = await httpClient.GetAsync("https://reqres.in/api/users");
 
-            if(response.StatusCode == System.Net.HttpStatusCode.OK)
-        {
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
                 var result = await response.Content.ReadAsStringAsync();
                 var json = JsonConvert.DeserializeObject<Root>(result);
                 return json;
-        }
+            }
             return null;
         }
     }

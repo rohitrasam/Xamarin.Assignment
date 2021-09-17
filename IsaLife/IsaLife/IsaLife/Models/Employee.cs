@@ -35,6 +35,4 @@ namespace IsaLife
         public List<Employee> EmployeeList { get; set; }
         
     }
-
-
 }
