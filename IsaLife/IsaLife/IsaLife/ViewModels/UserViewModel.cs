@@ -42,6 +42,8 @@ namespace IsaLife.ViewModels
         public async Task GetEmployees()
         {
             var result = await _employeeService.GetEmployees();
+            result.EmployeeList[0].Gender = "F";
+            result.EmployeeList[1].Gender = "F";
             Users = result.EmployeeList;
             OnPropertyChanged(nameof(Users));
         }
