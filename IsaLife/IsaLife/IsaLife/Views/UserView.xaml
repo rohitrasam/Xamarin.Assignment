@@ -10,8 +10,9 @@
         <ResourceDictionary>
             <converters:ColorConverter x:Key="colorConverter"/>
         </ResourceDictionary>
+        
         <Style TargetType="FlexLayout">
-            <Setter Property="BackgroundColor" Value="{Binding Gender,Converter={StaticResource colorConverter}}"/>
+            <Setter Property="BackgroundColor" Value="{Binding Gender, Converter={StaticResource colorConverter}}"/>
         </Style>
     </ContentPage.Resources>
     <StackLayout>
@@ -25,7 +26,7 @@
                         <FlexLayout JustifyContent="SpaceBetween" Padding="10, 0" AlignItems="Center">
                             <Label Text="{Binding Id}"/>
                             <Label Text="{Binding FirstName}"/>
-                            <Label Text="{Binding Gender}" />
+                            <Label Text="{Binding Gender}"/>
                             <Label Text="{Binding Email}"/>
                             <Image Source="{Binding Avatar}"/>
                         </FlexLayout>
