@@ -2,8 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewModel="clr-namespace:IsaLife"
-             x:Class="IsaLife.Views.UserView">
-  
+             x:Class="IsaLife.Views.UserView"
+             xmlns:converters="clr-namespace:IsaLife.Converters"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ColorConverter x:Key="colorConverter"/>
+        </ResourceDictionary>
+        
+        <Style TargetType="FlexLayout">
+            <Setter Property="BackgroundColor" Value="{Binding Converter={StaticResource colorConverter}}"/>
+        </Style>
+    </ContentPage.Resources>
     <StackLayout>
         <Label Text="Employees List" FontSize="Large"
                 VerticalOptions="CenterAndExpand" 
@@ -16,6 +27,8 @@
                             <Label Text="{Binding Id}"/>
                             <Label Text="{Binding FirstName}"/>
                             <Label Text="{Binding Gender}"/>
+                            <Label Text="{Binding Email}"/>
+                            <Image Source="{Binding Avatar}"/>
                         </FlexLayout>
                     </ViewCell>
                 </DataTemplate>

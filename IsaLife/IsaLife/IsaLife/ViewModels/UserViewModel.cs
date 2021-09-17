@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
@@ -6,7 +8,6 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using IsaLife.Service;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 
 namespace IsaLife.ViewModels
 {
@@ -21,13 +22,13 @@ namespace IsaLife.ViewModels
             get 
             {
                 return users;
-            }
-            set
-            {
-                users = value;
+            } 
+            set {
+                users = value; 
                 OnPropertyChanged(nameof(Users));
-            }
+            } 
         }
+
         public UserViewModel(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
@@ -41,6 +42,8 @@ namespace IsaLife.ViewModels
         public async Task GetEmployees()
         {
             var result = await _employeeService.GetEmployees();
+            result.EmployeeList[0].Gender = "F";
+            result.EmployeeList[1].Gender = "F";
             Users = result.EmployeeList;
             OnPropertyChanged(nameof(Users));
         }

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsaLife.RegisterPage"
+             xmlns:custom="clr-namespace:IsaLife.custom"
              BackgroundColor="#00778b">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -13,8 +14,8 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
-            <Entry Placeholder="First Name" />
-            <Entry Placeholder="Last Name" />
+            <custom:MyEntry Placeholder="First Name"/>
+            <custom:MyEntry Placeholder="Last Name" />
             <Entry Placeholder="Email" />
             <Entry Placeholder="Password" IsPassword="True" />
             <Entry Placeholder="Confirm Password" IsPassword="True" />
