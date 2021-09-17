@@ -14,18 +14,28 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+            <Label Text="Register page" 
+                   TextColor="White" 
+                   FontSize="30" 
+                   VerticalTextAlignment="Center" 
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,30"/>
             <custom:MyEntry Placeholder="First Name"/>
             <custom:MyEntry Placeholder="Last Name" />
-            <Entry Placeholder="Email" />
-            <Entry Placeholder="Password" IsPassword="True" />
-            <Entry Placeholder="Confirm Password" IsPassword="True" />
-            <Label Text="Date Of Birth" TextColor="White" />
+            <custom:MyEntry Placeholder="Email" />
+            <custom:MyEntry Placeholder="Password" IsPassword="True" />
+            <custom:MyEntry Placeholder="Confirm Password" IsPassword="True" />
+            <Label Text="Date Of Birth" TextColor="White" FontSize="20" />
             <DatePicker TextColor="White"></DatePicker>
-            <Entry Placeholder="Address"/>
+            <custom:MyEntry Placeholder="Address"/>
 
-            <Button Text="Sign Up"/>
-            <Label Text="Already have account?" TextColor="LightBlue"/>
+            <Button Text="Sign Up" CornerRadius="100" HeightRequest="50" Margin="5"/>
+            
+            <Label Text="Already have account?" TextColor="LightBlue" FontSize="20"/>
             <Button 
+                HeightRequest="50"
+                CornerRadius="100"
+                 Margin="5"
                 Text="Sign In"
                 Clicked="Button_Clicked_1"
                     ></Button>
