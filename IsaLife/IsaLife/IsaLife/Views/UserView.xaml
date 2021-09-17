@@ -12,7 +12,7 @@
         </ResourceDictionary>
         
         <Style TargetType="FlexLayout">
-            <Setter Property="BackgroundColor" Value="{Binding Converter={StaticResource colorConverter}}"/>
+            <Setter Property="BackgroundColor" Value="{Binding Gender, Converter={StaticResource colorConverter}}"/>
         </Style>
     </ContentPage.Resources>
     <StackLayout>
