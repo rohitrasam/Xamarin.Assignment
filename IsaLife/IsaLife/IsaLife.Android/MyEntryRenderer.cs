@@ -17,12 +17,12 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(MyEntry), typeof(EntryStyleRenderer))]
+[assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
 namespace IsaLife.Droid
 {
-    public class EntryStyleRenderer : EntryRenderer
+    public class MyEntryRenderer : EntryRenderer
     {
-        public EntryStyleRenderer(Context context) : base(context)
+        public MyEntryRenderer(Context context) : base(context)
         {
 
         }
@@ -38,6 +38,7 @@ namespace IsaLife.Droid
                 Control.SetBackgroundDrawable(gd);
                 Control.SetRawInputType(InputTypes.TextFlagNoSuggestions);
                 Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Blue));
+                
             }
         }
     }

@@ -21,11 +21,11 @@ namespace IsaLife.ViewModels
         { 
             get 
             {
-                return employees;
+                return users;
             } 
             set {
-                employees = value; 
-                OnPropertyChanged(nameof(Employees));
+                users = value; 
+                OnPropertyChanged(nameof(Users));
             } 
         }
 
