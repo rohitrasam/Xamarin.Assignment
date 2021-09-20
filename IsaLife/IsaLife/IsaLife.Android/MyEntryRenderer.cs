@@ -8,7 +8,7 @@ using Android.Text;
 using Android.Views;
 using Android.Widget;
 using IsaLife;
-using IsaLife.custom;
+using IsaLife.CustomComponents;
 using IsaLife.Droid;
 using System;
 using System.Collections.Generic;
@@ -33,13 +33,13 @@ namespace IsaLife.Droid
             if(Control != null)
             {
                 GradientDrawable gd = new GradientDrawable();
-                gd.SetColor(global::Android.Graphics.Color.Fuchsia);
+                gd.SetColor(global::Android.Graphics.Color.PeachPuff);
                 gd.SetCornerRadius(15);
 #pragma warning disable CS0618 // Type or member is obsolete
                 Control.SetBackgroundDrawable(gd);
 #pragma warning restore CS0618 // Type or member is obsolete
                 Control.SetRawInputType(InputTypes.TextFlagNoSuggestions);
-                Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.GreenYellow));
+                Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.LightBlue));
                 
             }
         }

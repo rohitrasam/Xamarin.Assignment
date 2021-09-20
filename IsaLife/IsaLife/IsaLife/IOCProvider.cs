@@ -20,7 +20,7 @@ namespace IsaLife
         }
 
         public static void Register()
-        {
+        {            
             container.Options.EnableAutoVerification = false;
             container.Register<LoginViewModel>();
             container.Register<UserViewModel>();
