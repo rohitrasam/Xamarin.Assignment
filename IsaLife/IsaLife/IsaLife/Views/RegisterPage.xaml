@@ -13,6 +13,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
             <Label Text="Register page" 
                    TextColor="White" 
@@ -29,16 +30,15 @@
             <DatePicker TextColor="White"></DatePicker>
             <custom:MyEntry Placeholder="Address"/>
 
-            <Button Text="Sign Up" CornerRadius="100" HeightRequest="50" Margin="5"/>
+                <Button Text="Sign Up" Style="{StaticResource Button}" />
             
             <Label Text="Already have account?" TextColor="LightBlue" FontSize="20"/>
             <Button 
-                HeightRequest="50"
-                CornerRadius="100"
-                 Margin="5"
+                Style="{StaticResource Button}" 
                 Text="Sign In"
                 Clicked="Button_Clicked_1"
                     ></Button>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

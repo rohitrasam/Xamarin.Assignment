@@ -23,7 +23,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <FlexLayout JustifyContent="SpaceBetween" Padding="10, 0" AlignItems="Center">
+                        <FlexLayout Style="{StaticResource UserList}">
                             <Label Text="{Binding Id}"/>
                             <Label Text="{Binding FirstName}"/>
                             <Label Text="{Binding Gender}"/>
