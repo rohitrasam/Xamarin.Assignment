@@ -7,13 +7,15 @@
              BackgroundColor="#00778b">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="Entry">
-                <Setter Property="TextColor" Value="white"/>
+            <Style TargetType="Entry" x:Key="Invalidemail">
+                <Setter Property="TextColor" Value="Red"/>
                 <Setter Property="PlaceholderColor" Value="White"/>
             </Style>
-            <Style x:Key="Invalidemail" TargetType="Entry">
-                <Setter Property="TextColor" Value="Red"/>
+            <Style TargetType="Entry" x:Key="ValidEmail">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="PlaceholderColor" Value="White"/>
             </Style>
+         
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
