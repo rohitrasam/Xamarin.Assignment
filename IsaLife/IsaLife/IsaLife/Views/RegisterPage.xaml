@@ -2,13 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsaLife.RegisterPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:custom="clr-namespace:IsaLife.CustomComponents"
              BackgroundColor="#00778b">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="Entry">
-                <Setter Property="TextColor" Value="white"/>
-                <Setter Property="PlaceholderColor" Value="White"/>
+            <Style TargetType="Entry" x:Key="InValidEmail">
+                <Setter Property="TextColor" Value="Red"/>
+                <!--<Setter Property="PlaceholderColor" Value="White"/>-->
+            </Style>
+            <Style TargetType="Entry" x:Key="ValidEmail">
+                <Setter Property="TextColor" Value="Green"/>
+                <!--<Setter Property="PlaceholderColor" Value="White"/>-->
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -23,8 +28,12 @@
                    Margin="0,0,0,30"/>
             <custom:MyEntry Placeholder="First Name"/>
             <custom:MyEntry Placeholder="Last Name" />
-            <custom:MyEntry Placeholder="Email" />
-            <custom:MyEntry Placeholder="Password" IsPassword="True" />
+                <custom:MyEntry Placeholder="Email">
+                    <custom:MyEntry.Behaviors>
+                        <xct:EmailValidationBehavior InvalidStyle="{StaticResource InValidEmail}" ValidStyle="{StaticResource ValidEmail}"/>
+                    </custom:MyEntry.Behaviors>
+                </custom:MyEntry>
+                <custom:MyEntry Placeholder="Password" IsPassword="True" />
             <custom:MyEntry Placeholder="Confirm Password" IsPassword="True" />
             <Label Text="Date Of Birth" TextColor="White" FontSize="20" />
             <DatePicker TextColor="White"></DatePicker>
