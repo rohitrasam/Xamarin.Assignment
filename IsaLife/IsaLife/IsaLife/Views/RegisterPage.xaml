@@ -15,18 +15,26 @@
                 <Setter Property="TextColor" Value="Green"/>
                 <!--<Setter Property="PlaceholderColor" Value="White"/>-->
             </Style>
+            <Style TargetType="Entry" x:Key="ValidEmail">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="PlaceholderColor" Value="White"/>
+            </Style>
+         
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="15">
             <Label Text="Register page" 
                    TextColor="White" 
                    FontSize="30" 
                    VerticalTextAlignment="Center" 
                    HorizontalOptions="Center" 
                    Margin="0,0,0,30"/>
-            <custom:MyEntry Placeholder="First Name"/>
+            <custom:MyEntry Placeholder="First Name" MaxLength="10" >
+                <custom:MyEntry.Behaviors>
+                    <xct:MaxLengthReachedBehavior/>
+                </custom:MyEntry.Behaviors>
+            </custom:MyEntry>
             <custom:MyEntry Placeholder="Last Name" />
                 <custom:MyEntry Placeholder="Email">
                     <custom:MyEntry.Behaviors>
