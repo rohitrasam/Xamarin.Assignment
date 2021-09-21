@@ -33,10 +33,11 @@
                    Margin="0,0,0,30"/>
             <custom:MyEntry Placeholder="First Name"/>
             <custom:MyEntry Placeholder="Last Name" />
-            <custom:MyEntry Placeholder="Email" />
-                <custom:MyEntry.Behaviors>
-                    <xct:EmailValidationBehavior InvalidStyle="{StaticResource InValidEmail}" ValidStyle="{StaticResource ValidEmail}"/>
-                </custom:MyEntry.Behaviors>
+                <custom:MyEntry Placeholder="Email">
+                    <custom:MyEntry.Behaviors>
+                        <xct:EmailValidationBehavior InvalidStyle="{StaticResource InValidEmail}" ValidStyle="{StaticResource ValidEmail}"/>
+                    </custom:MyEntry.Behaviors>
+                </custom:MyEntry>
                 <custom:MyEntry Placeholder="Password" IsPassword="True" />
             <custom:MyEntry Placeholder="Confirm Password" IsPassword="True" />
             <Label Text="Date Of Birth" TextColor="White" FontSize="20" />
