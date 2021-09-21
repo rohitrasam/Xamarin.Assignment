@@ -19,7 +19,7 @@
             <Image Source="https://pbs.twimg.com/profile_images/1284270027495989249/fW581o4j_400x400.jpg" WidthRequest="180" HeightRequest="180"/>
 
             <custom:MyEntry Text="{Binding Email}" x:Name="loginEmail" Placeholder="Email"/>
-            <custom:MyEntry Text="{Binding Password}" x:Name="loginPassword" Placeholder="Password" IsPassword="True" />
+            <custom:MyEntry Text="{Binding Password}" x:Name="loginPassword" Placeholder="Password" IsPassword="True" MaxLength="10"/>
             <Button
                 Text="Login"
                 Style="{StaticResource Button}"            

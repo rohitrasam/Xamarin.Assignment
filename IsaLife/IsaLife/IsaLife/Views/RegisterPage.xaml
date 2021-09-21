@@ -5,6 +5,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:custom="clr-namespace:IsaLife.CustomComponents"
              BackgroundColor="#00778b">
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Entry" x:Key="InValidEmail">
@@ -15,8 +16,8 @@
                 <Setter Property="TextColor" Value="Green"/>
                 <!--<Setter Property="PlaceholderColor" Value="White"/>-->
             </Style>
-            <Style TargetType="Entry" x:Key="ValidEmail">
-                <Setter Property="TextColor" Value="White"/>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="white"/>
                 <Setter Property="PlaceholderColor" Value="White"/>
             </Style>
          
