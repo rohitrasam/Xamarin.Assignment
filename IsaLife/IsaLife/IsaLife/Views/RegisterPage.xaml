@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsaLife.RegisterPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:custom="clr-namespace:IsaLife.CustomComponents"
              BackgroundColor="#00778b">
     <ContentPage.Resources>
@@ -10,19 +11,30 @@
                 <Setter Property="TextColor" Value="white"/>
                 <Setter Property="PlaceholderColor" Value="White"/>
             </Style>
+            <Style x:Key="Invalidemail" TargetType="Entry">
+                <Setter Property="TextColor" Value="Red"/>
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="15">
             <Label Text="Register page" 
                    TextColor="White" 
                    FontSize="30" 
                    VerticalTextAlignment="Center" 
                    HorizontalOptions="Center" 
                    Margin="0,0,0,30"/>
-            <custom:MyEntry Placeholder="First Name"/>
+            <custom:MyEntry Placeholder="First Name" MaxLength="10" >
+                <custom:MyEntry.Behaviors>
+                    <xct:MaxLengthReachedBehavior/>
+                </custom:MyEntry.Behaviors>
+            </custom:MyEntry>
             <custom:MyEntry Placeholder="Last Name" />
-            <custom:MyEntry Placeholder="Email" />
+            <custom:MyEntry Placeholder="Email" >
+                <custom:MyEntry.Behaviors>
+                    <xct:EmailValidationBehavior InvalidStyle="{StaticResource Invalidemail}" />
+                </custom:MyEntry.Behaviors>
+            </custom:MyEntry>
             <custom:MyEntry Placeholder="Password" IsPassword="True" />
             <custom:MyEntry Placeholder="Confirm Password" IsPassword="True" />
             <Label Text="Date Of Birth" TextColor="White" FontSize="20" />

@@ -17,6 +17,7 @@ namespace IsaLife
         {
             InitializeComponent();
             BindingContext = IOCProvider.GetInstance<LoginViewModel>();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

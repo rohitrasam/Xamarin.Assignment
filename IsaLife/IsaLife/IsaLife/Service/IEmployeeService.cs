@@ -8,7 +8,6 @@ namespace IsaLife.Service
 {
     public interface IEmployeeService
     {
-        //Task<ObservableCollection<Root>> GetEmployees();
         Task<Root> GetEmployees();
     }
 }
