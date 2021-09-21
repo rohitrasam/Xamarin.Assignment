@@ -5,6 +5,13 @@
              xmlns:custom="clr-namespace:IsaLife.CustomComponents;assembly=IsaLife"
              BackgroundColor="#00778b"
              >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="invalidemail" TargetType="custom:MyEntry" >
+                <Setter Property="TextColor" Value="Red"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Padding="40" VerticalOptions="Center">
             <Label Text="ISAGENIX" VerticalOptions="Center" FontSize="40" TextColor="White" HorizontalOptions="Center" />
