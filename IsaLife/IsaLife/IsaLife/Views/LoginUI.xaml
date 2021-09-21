@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsaLife.LoginUI"
-             xmlns:custom="clr-namespace:IsaLife.CustomComponents"
+             xmlns:custom="clr-namespace:IsaLife.CustomComponents;assembly=IsaLife"
              BackgroundColor="#00778b"
              >
     <ContentPage.Resources>
@@ -18,15 +18,11 @@
             
             <Image Source="https://pbs.twimg.com/profile_images/1284270027495989249/fW581o4j_400x400.jpg" WidthRequest="180" HeightRequest="180"/>
 
-            <custom:MyEntry Text="{Binding Email}" x:Name="loginEmail" Placeholder="Email" TextColor="Blue" PlaceholderColor="White"/>
-            <custom:MyEntry Text="{Binding Password}" x:Name="loginPassword" Placeholder="Password" IsPassword="True" TextColor="Blue" PlaceholderColor="White"/>
+            <custom:MyEntry Text="{Binding Email}" x:Name="loginEmail" Placeholder="Email"/>
+            <custom:MyEntry Text="{Binding Password}" x:Name="loginPassword" Placeholder="Password" IsPassword="True" />
             <Button
                 Text="Login"
-                VerticalOptions="Center"
-                BackgroundColor="LightBlue"
-                BorderWidth="1.5"
-                CornerRadius="50"
-                BorderColor="ForestGreen"
+                Style="{StaticResource Button}"            
                 Command="{Binding LoginCommand}"
                 ></Button>
             <Label HorizontalOptions="Center">
